@@ -1,18 +1,11 @@
 package com.github.rayniel95.velocitest.awsappsync.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
-import org.junit.Rule;
-import org.junit.contrib.java.lang.system.SystemOutRule;
 
 import java.io.StringWriter;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.Template;
@@ -36,17 +29,31 @@ public class UtilTest
      * Rigorous Test :-)
      */
     @Test
-    public void flattenSqlStatementResult()
+    public void getSharedCredentialsForObtenerSesion()
     {
         // log.log(Level.INFO, "I'm starting");
         try {
             String result = runTemplate(
-                "src/obtenersesion/flattensqlstatement/flattenSqlStatementResult.vt", 
-                "src/obtenersesion/flattensqlstatement/context.json"
+                "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/GetSharedCredentialsForObtenerSesion.req.vt", 
+                "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/req.context.json"
             );
         } catch (Exception e) {
             System.err.println(e);
         }
+    }
+
+    @Test
+    public void flattenSqlStatementResult()
+    {
+        // log.log(Level.INFO, "I'm starting");
+        // try {
+        //     String result = runTemplate(
+        //         "src/testinfo/obtenersesion/flattensqlstatementresult/flattenSqlStatementResult.vt", 
+        //         "src/testinfo/obtenersesion/flattensqlstatementresult/context.json"
+        //     );
+        // } catch (Exception e) {
+        //     System.err.println(e);
+        // }
     }
 
     public static String runTemplate(String templatePath, String contextPath) throws Exception {
