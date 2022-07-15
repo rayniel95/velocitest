@@ -1,13 +1,19 @@
 package com.github.rayniel95.velocitest.awsappsync.util;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+
 import java.io.StringWriter;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -24,16 +30,26 @@ import com.github.rayniel95.velocitest.awsappsync.util.*;
  */
 public class UtilTest 
 {
+    private static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void flattenSqlStatementResult()
     {
-        assertTrue( true );
+        // log.log(Level.INFO, "I'm starting");
+        try {
+            String result = runTemplate(
+                "src/obtenersesion/flattensqlstatement/flattenSqlStatementResult.vt", 
+                "src/obtenersesion/flattensqlstatement/context.json"
+            );
+        } catch (Exception e) {
+            System.err.println(e);
+        }
     }
 
-    public static void runTemplate(String templatePath, String contextPath) throws Exception {
+    public static String runTemplate(String templatePath, String contextPath) throws Exception {
         VelocityEngine engine = new VelocityEngine();
         engine.init();
         
@@ -53,10 +69,10 @@ public class UtilTest
 
             StringWriter writer = new StringWriter();
             template.merge(context, writer);
-
-            System.out.println(writer.toString());
+            throw new Exception(writer.toString());
+            // return writer.toString();
         } catch (Exception e) {
-            System.out.println(e);
+            throw e;
         }
     }
 }
