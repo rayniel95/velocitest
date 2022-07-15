@@ -20,9 +20,9 @@ public class Util {
         }   
         return true;
     }
-    // public static boolean qr(Object valuObject) {
-        
-    // }
+    public static String qr(Object valuObject) {
+        return "";
+    }
     // public static autoId() {
         
     // }
