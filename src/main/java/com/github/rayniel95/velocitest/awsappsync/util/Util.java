@@ -20,12 +20,18 @@ public class Util {
         }   
         return true;
     }
-    public static String qr(Object valuObject) {
-        return "";
-    }
+    public static void qr(Object valuObject) {}
     // public static autoId() {
         
     // }
+    // $util.rds.toJsonObject(String serializedSQLResult): Object
+    public static Map<Object, Object> rds_toJsonObject(String serializedSQLResult) {
+        Map<Object, Object> jsonRep = Util.parseJson(serializedSQLResult);
+        // if(jsonRep["sqlStatementResults"].lenght() == 0){
+
+        // }
+        return jsonRep;
+    }
     public static String toJson(Object valObject) {
         Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
         Type contextType = new TypeToken<HashMap<Object, Object>>(){}.getType();

@@ -25,27 +25,67 @@ public class UtilTest
 {
     private static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void getSharedCredentialsForObtenerSesion()
+    public void addPrefix()
     {
-        // log.log(Level.INFO, "I'm starting");
         try {
             String result = runTemplate(
-                "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/GetSharedCredentialsForObtenerSesion.req.vt", 
-                "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/req.context.json"
+                "src/testinfo/obtenersesion/addprefix/addPrefix.vt", 
+                "src/testinfo/obtenersesion/addprefix/context.json"
             );
         } catch (Exception e) {
             System.err.println(e);
         }
     }
+    @Test
+    public void getSession()
+    {
+        // try {
+        //     String result = runTemplate(
+        //         "src/testinfo/obtenersesion/getsession/GetSessionForObtenerSesion.req.vt", 
+        //         "src/testinfo/obtenersesion/getsession/req.context.json"
+        //     );
+        // } catch (Exception e) {
+        //     System.err.println(e);
+        // }
+
+        // try {
+        //     String result = runTemplate(
+        //         "src/testinfo/obtenersesion/getsession/GetSessionForObtenerSesion.res.vt", 
+        //         "src/testinfo/obtenersesion/getsession/res.context.json"
+        //     );
+        // } catch (Exception e) {
+        //     System.err.println(e);
+        // }
+    }
+    @Test
+    public void concatQueryAttributes()
+    {
+        // try {
+        //     String result = runTemplate(
+        //         "src/testinfo/obtenersesion/concatqueryattributes/concatQueryAttributes.vt", 
+        //         "src/testinfo/obtenersesion/concatqueryattributes/GetSharedCredentialsForObtenerSesion.req.context.json"
+        //     );
+        // } catch (Exception e) {
+        //     System.err.println(e);
+        // }
+    }
+    @Test
+    public void getSharedCredentialsForObtenerSesion()
+    {
+        // try {
+        //     String result = runTemplate(
+        //         "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/GetSharedCredentialsForObtenerSesion.req.vt", 
+        //         "src/testinfo/obtenersesion/getsharedcredentialsforobtenersesion/req.context.json"
+        //     );
+        // } catch (Exception e) {
+        //     System.err.println(e);
+        // }
+    }
 
     @Test
     public void flattenSqlStatementResult()
     {
-        // log.log(Level.INFO, "I'm starting");
         // try {
         //     String result = runTemplate(
         //         "src/testinfo/obtenersesion/flattensqlstatementresult/flattenSqlStatementResult.vt", 
