@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SqlStatementResult {
     int numberOfRecordsUpdated;
-    List<Object> records;
-    List<Object> columnMetadata;
+    List<Record> records;
+    List<ColumnMetadata> columnMetadata;
 }
 
