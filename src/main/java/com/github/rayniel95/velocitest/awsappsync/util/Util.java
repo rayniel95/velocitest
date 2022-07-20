@@ -1,6 +1,8 @@
 package com.github.rayniel95.velocitest.awsappsync.util;
     
 import java.util.Map;
+
+import com.github.rayniel95.velocitest.awsappsync.util.rds.RdsUtil;
 import com.google.gson.Gson;
 import java.util.HashMap;
 import com.google.gson.GsonBuilder;
@@ -9,6 +11,7 @@ import java.lang.reflect.Type;
 
 
 public class Util {
+    RdsUtil rds;
 
     public static void error(String valString) throws Exception {
         throw new Exception(valString);
@@ -25,13 +28,7 @@ public class Util {
         
     // }
     // $util.rds.toJsonObject(String serializedSQLResult): Object
-    public static Map<Object, Object> rds_toJsonObject(String serializedSQLResult) {
-        Map<Object, Object> jsonRep = Util.parseJson(serializedSQLResult);
-        // if(jsonRep["sqlStatementResults"].lenght() == 0){
 
-        // }
-        return jsonRep;
-    }
     public static String toJson(Object valObject) {
         Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
         Type contextType = new TypeToken<HashMap<Object, Object>>(){}.getType();
