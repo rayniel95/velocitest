@@ -8,6 +8,7 @@ public class ColumnMetadata {
     // Type: Boolean
     // Required: No
     boolean isSigned;
+    
     // TODO - take a look to default values
     // A value that indicates whether the column contains currency values.
     // Type: Boolean
