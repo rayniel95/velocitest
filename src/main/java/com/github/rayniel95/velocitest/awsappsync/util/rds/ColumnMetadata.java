@@ -1,4 +1,4 @@
-package com.github.rayniel95.velocitest.awsappsync.util;
+package com.github.rayniel95.velocitest.awsappsync.util.rds;
 
 /*
 Contains the metadata for a column in AWS RDS.
@@ -8,7 +8,7 @@ public class ColumnMetadata {
     // Type: Boolean
     // Required: No
     boolean isSigned;
-
+    // TODO - take a look to default values
     // A value that indicates whether the column contains currency values.
     // Type: Boolean
     // Required: No

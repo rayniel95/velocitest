@@ -1,4 +1,4 @@
-package com.github.rayniel95.velocitest.awsappsync.util;
+package com.github.rayniel95.velocitest.awsappsync.util.rds;
 
 import java.util.List;
 
