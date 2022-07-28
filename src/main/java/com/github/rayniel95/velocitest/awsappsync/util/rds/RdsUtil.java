@@ -12,11 +12,12 @@ import java.lang.reflect.Type;
 
 public class RdsUtil {
 
-    public static SqlStatementResults toJsonObject(String serializedSQLResult) {
-        Map<Object, Object> result = Util.parseJson(serializedSQLResult);
-        // if(jsonRep["sqlStatementResults"].lenght() == 0){
-
-        // }
-        return jsonRep;
+    public static Object toJsonObject(String serializedSQLResult) {
+        Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
+        Type contextType = new TypeToken<SqlStatementResults>(){}.getType();
+        SqlStatementResults loadedContext = gson.fromJson(
+            serializedSQLResult, contextType
+            );
+        
     }
 }
